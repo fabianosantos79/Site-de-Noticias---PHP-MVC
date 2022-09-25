@@ -21,16 +21,17 @@
 
 
         public function findId($id){
-            $sql = "SELECT * FROM notes WHERE id = :id";
-            $sql = Model::getConn()->prepare($sql);
-            $sql->bindValue(':id', $id);
-            $sql->execute();
+            $sql = "SELECT * FROM notes WHERE id = ?";
+            $stmt = Model::getConn()->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
 
-            if($sql->rowCount() > 0){
-                $return = $sql->fetch();
+            if($stmt->rowCount() > 0){
+                $return = $stmt->fetch(PDO::FETCH_ASSOC);
             }else{
                 return [];
             }
         }
 
+        
     }
