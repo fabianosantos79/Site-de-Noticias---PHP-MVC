@@ -7,6 +7,11 @@
     <title>Curso MVC</title>
 </head>
 <body>
+<h2>Cadastrar nova Mensagem</h2>
+    <button name="btn-cadastrar"><a href="/notes/cadastrar">Cadastrar</a></button>
+
+<hr>
+<h1>Lista de Mensagens</h1>
     <?php require_once'app/views/'.$view.'.php'; ?>
 </body>
 </html>
