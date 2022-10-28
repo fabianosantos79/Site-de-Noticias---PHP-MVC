@@ -10,7 +10,7 @@
             $note = $this->model('Note');
             $dados = $note->findId($id);
 
-            $this->view('ver', $dados=[]);
+            $this->view('ver', $dados = []);
         }
 
 
@@ -27,7 +27,7 @@
                 $mensagem[] = $note->save();
             }
 
-            $this->view('cadastrar', $dados = ['mensagem'=>$mensagem]);
+            $this->view('cadastrar', $dados = ['mensagem'=> $mensagem]);
         }
 
     }
